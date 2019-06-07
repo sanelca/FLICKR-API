@@ -1,0 +1,10 @@
+<%= form_tag({controller: "static_pages", action: "home"}, method: :get) do %>
+  <%= label_tag :id, "Input Flickr ID" %> <br>
+  <%= text_field_tag :id %> <br>
+  <%= submit_tag "Get my photos!" %>
+<% end %>
+<% if @photos %>
+  <% @photos.each do |p| %>
+    <%= image_tag("http://farm#{p.farm}.staticflickr.com/#{p.server}/#{p.id}_#{p.secret}.jpg", :class => 'flickr_photo', :border => 0, :size => '300x300')%>
+  <% end %>
+<% end %>
