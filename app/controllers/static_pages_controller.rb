@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-require 'flickraw'
+  require 'flickraw'
   FlickRaw.api_key=ENV["FLICKRAW_API_KEY"]
   FlickRaw.shared_secret=ENV["FLICKRAW_SHARED_SECRET"]
   def home
